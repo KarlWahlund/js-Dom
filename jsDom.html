@@ -8,28 +8,96 @@
     <title>JS Dom</title>
 </head>
 
-<!--Add image to be done with html part acording to maryam-->
+<script>
+    var picture = 1
+    var backgroundColor = "White"
+    var imgMargin = 0
+    var timeShown = False
 
-<body>
-    <header>
+    //cycles between 2 colors by tracking which it currently is in the variable "backgroundColor"
+    function changeBg(){
+        if (backgroundColor == "White"){
+            document.getElementById("Body").style.backgroundColor = "cyan"
+            backgroundColor = "Cyan"
+        }
+        else{
+            document.getElementById("Body").style.backgroundColor = "white"
+            backgroundColor = "White"
+        }
+    }
+
+    function goodWibes(){
+        document.getElementById("goodWibes").style.display = "block"
+    }
+
+    function time(){
+        document.getElementById("time").innerHTML = Date()
+        document.getElementById("time").style.display = "block"
+    }
+
+    //cycles between 2 images by keeping track which image it currently is displacing in the variable "picture"
+    function changePicture(){
+        if (picture == 1){
+            document.getElementById("img").src ="The-Science-of-Colors-in-marketing.jpg"
+            picture = 2
+        }
+        else{
+            document.getElementById("img").src ="colors.jpg"
+            picture = 1
+        }
+    }
+
+    //Hides the picture
+    function hidePicture(){
+        document.getElementById("img").style.display = "none";
+    }
+
+    //Shows the picture
+    function showPicture(){
+        document.getElementById("img").style.display = "block";
+    }
+
+    function header(){
+
+    }
+
+    function removeHeader(){
+
+    }
+
+    function showHeader(){
+
+    }
+</script>
+
+<body id="Body">
+
+    <!--Div for showing image & text when header not active-->
+    <div id="content">
+        <h2 id="goodWibes">Be the best version of you!</h2>
+        <p id="time"></p>
         <img src="colors.jpg" alt=":(" id="img">
-    </header>
+    </div>
+
+    <!--Puts box in center of screen-->
     <div style="justify-content: center; display: flex;">
+        <!--Is the button box-->
         <div id="buttonBox">
+            <!--subdiv for each column of buttons, can probably be done in better way-->
             <div id="boxSubDiv">
-                <div id="button">Change Bg</div>
-                <div id="button">Change picture</div>
-                <div id="button">Header</div>
+                <div id="button" onclick="changeBg()">Change Bg</div>
+                <div id="button" onclick="changePicture()">Change picture</div>
+                <div id="button" onclick="header()">Header</div>
             </div>
             <div id="boxSubDiv">
-                <div id="button">Good wibes</div>
-                <div id="button">Hide picture</div>
-                <div id="button">Remove Header</div>
+                <div id="button" onclick="goodWibes()">Good wibes</div>
+                <div id="button" onclick="hidePicture()">Hide picture</div>
+                <div id="button" onclick="removeHeader()">Remove Header</div>
             </div>
             <div id="boxSubDiv">
-                <div id="button">Time</div>
-                <div id="button">Show picture</div>
-                <div id="button">Show Header</div>
+                <div id="button" onclick="time()">Time</div>
+                <div id="button" onclick="showPicture()">Show picture</div>
+                <div id="button" onclick="showHeader()">Show Header</div>
             </div>
         </div>
     </div>

@@ -5,8 +5,8 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 10vw;
-    position: absolute;
+    position: fixed;
+    top: 10vw;
 }
 
 #boxSubDiv{
@@ -33,11 +33,29 @@
 }
 
 #img{
-    position: absolute;
     width: 20vw;
+    margin-top: 0;
 }
 
-header{
+#content{
     display: flex;
+    flex-direction: column;
     justify-content: left;
+}
+
+body{
+    background-color: white;
+}
+
+#time{
+    display: none;
+    font-size: 1.4vw;
+    margin-top: 0.25vw;
+}
+
+#goodWibes{
+    display: none;
+    font-size: 2vw;
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
 }
