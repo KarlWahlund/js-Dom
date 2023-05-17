@@ -11,8 +11,7 @@
 <script>
     var picture = 1
     var backgroundColor = "White"
-    var imgMargin = 0
-    var timeShown = False
+    var Header = false
 
     //cycles between 2 colors by tracking which it currently is in the variable "backgroundColor"
     function changeBg(){
@@ -60,25 +59,43 @@
     }
 
     function header(){
-
+        if (Header == false){
+            console.log("true")
+            document.getElementById("content").style.backgroundColor = "gray"
+            document.getElementById("content").style.outline = "3px solid white"
+            document.getElementById("content").style.justifyContent = "center"
+            document.getElementById("content").style.display = "flex";
+            Header = true
+        }
+        else{
+            document.getElementById("content").style.backgroundColor = ""
+            document.getElementById("content").style.outline = "none"
+            document.getElementById("content").style.justifyContent = "left"
+            document.getElementById("content").style.display = "flex";
+            Header = false
+        }
     }
 
     function removeHeader(){
-
+        if (Header == true){
+            document.getElementById("content").style.display = "none";
+        }
     }
 
     function showHeader(){
-
+        document.getElementById("content").style.display = "flex";
     }
 </script>
 
 <body id="Body">
 
-    <!--Div for showing image & text when header not active-->
+    <!--Div for holding the images and text-->
     <div id="content">
-        <h2 id="goodWibes">Be the best version of you!</h2>
-        <p id="time"></p>
-        <img src="colors.jpg" alt=":(" id="img">
+        <div id="itemHolder">
+            <h2 id="goodWibes">Be the best version of you!</h2>
+            <p id="time"></p>
+            <img src="colors.jpg" alt=":(" id="img">
+        </div>
     </div>
 
     <!--Puts box in center of screen-->
