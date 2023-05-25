@@ -12,6 +12,7 @@
     var picture = 1
     var backgroundColor = "White"
     var Header = false
+    var buttonTracker = [false, false, false, false, false, false, false, false, false]
 
     //cycles between 2 colors by tracking which it currently is in the variable "backgroundColor"
     function changeBg(){
@@ -23,17 +24,35 @@
             document.getElementById("Body").style.backgroundColor = "white"
             backgroundColor = "White"
         }
+
+        //Records that the button has been interacted with and if all buttons have been interacted with then shows a final message
+        buttonTracker[0] = true
+        if (buttonTracker[0]+buttonTracker[1]+buttonTracker[2]+buttonTracker[3]+buttonTracker[4]+buttonTracker[5]+buttonTracker[6]+buttonTracker[7]+buttonTracker[8] == 9){
+            document.getElementById("message").style.display = "block";
+        }
     }
 
     //shows the motivational text
     function goodWibes(){
         document.getElementById("goodWibes").style.display = "block"
+
+        //Records that the button has been interacted with and if all buttons have been interacted with then shows a final message
+        buttonTracker[1] = true
+        if (buttonTracker[0]+buttonTracker[1]+buttonTracker[2]+buttonTracker[3]+buttonTracker[4]+buttonTracker[5]+buttonTracker[6]+buttonTracker[7]+buttonTracker[8] == 9){
+            document.getElementById("message").style.display = "block";
+        }
     }
 
     //shows and updates text that includes the current time
     function time(){
         document.getElementById("time").innerHTML = Date()
         document.getElementById("time").style.display = "block"
+
+        //Records that the button has been interacted with and if all buttons have been interacted with then shows a final message
+        buttonTracker[2] = true
+        if (buttonTracker[0]+buttonTracker[1]+buttonTracker[2]+buttonTracker[3]+buttonTracker[4]+buttonTracker[5]+buttonTracker[6]+buttonTracker[7]+buttonTracker[8] == 9){
+            document.getElementById("message").style.display = "block";
+        }
     }
 
     //cycles between 2 images by keeping track which image it currently is displacing in the variable "picture"
@@ -46,27 +65,47 @@
             document.getElementById("img").src ="colors.jpg"
             picture = 1
         }
+
+        //Records that the button has been interacted with and if all buttons have been interacted with then shows a final message
+        buttonTracker[3] = true
+        if (buttonTracker[0]+buttonTracker[1]+buttonTracker[2]+buttonTracker[3]+buttonTracker[4]+buttonTracker[5]+buttonTracker[6]+buttonTracker[7]+buttonTracker[8] == 9){
+            document.getElementById("message").style.display = "block";
+        }
     }
 
     //Hides the picture
     function hidePicture(){
         document.getElementById("img").style.display = "none";
+
+        //Records that the button has been interacted with and if all buttons have been interacted with then shows a final message
+        buttonTracker[4] = true
+        if (buttonTracker[0]+buttonTracker[1]+buttonTracker[2]+buttonTracker[3]+buttonTracker[4]+buttonTracker[5]+buttonTracker[6]+buttonTracker[7]+buttonTracker[8] == 9){
+            document.getElementById("message").style.display = "block";
+        }
     }
 
     //Shows the picture
     function showPicture(){
         document.getElementById("img").style.display = "block";
+
+        //Records that the button has been interacted with and if all buttons have been interacted with then shows a final message
+        buttonTracker[5] = true
+        if (buttonTracker[0]+buttonTracker[1]+buttonTracker[2]+buttonTracker[3]+buttonTracker[4]+buttonTracker[5]+buttonTracker[6]+buttonTracker[7]+buttonTracker[8] == 9){
+            document.getElementById("message").style.display = "block";
+        }
     }
 
+    //Changes styles to create header box
     function header(){
         if (Header == false){
-            console.log("true")
             document.getElementById("content").style.backgroundColor = "gray"
             document.getElementById("content").style.outline = "3px solid white"
             document.getElementById("content").style.justifyContent = "center"
             document.getElementById("content").style.display = "flex";
             Header = true
         }
+
+        //Also turns diplay to flex when disabling the header so that it will show the text and images outside the header even if the header was previously removed
         else{
             document.getElementById("content").style.backgroundColor = ""
             document.getElementById("content").style.outline = "none"
@@ -74,16 +113,36 @@
             document.getElementById("content").style.display = "flex";
             Header = false
         }
+
+        //Records that the button has been interacted with and if all buttons have been interacted with then shows a final message
+        buttonTracker[6] = true
+        if (buttonTracker[0]+buttonTracker[1]+buttonTracker[2]+buttonTracker[3]+buttonTracker[4]+buttonTracker[5]+buttonTracker[6]+buttonTracker[7]+buttonTracker[8] == 9){
+            document.getElementById("message").style.display = "block";
+        }
     }
 
+    //Hides the header and its content
     function removeHeader(){
         if (Header == true){
             document.getElementById("content").style.display = "none";
         }
+
+        //Records that the button has been interacted with and if all buttons have been interacted with then shows a final message
+        buttonTracker[7] = true
+        if (buttonTracker[0]+buttonTracker[1]+buttonTracker[2]+buttonTracker[3]+buttonTracker[4]+buttonTracker[5]+buttonTracker[6]+buttonTracker[7]+buttonTracker[8] == 9){
+            document.getElementById("message").style.display = "block";
+        }
     }
 
+    //Shows the header again if it is hidden
     function showHeader(){
         document.getElementById("content").style.display = "flex";
+
+        //Records that the button has been interacted with and if all buttons have been interacted with then shows a final message
+        buttonTracker[8] = true
+        if (buttonTracker[0]+buttonTracker[1]+buttonTracker[2]+buttonTracker[3]+buttonTracker[4]+buttonTracker[5]+buttonTracker[6]+buttonTracker[7]+buttonTracker[8] == 9){
+            document.getElementById("message").style.display = "block";
+        }
     }
 </script>
 
@@ -119,6 +178,9 @@
                 <div id="button" onclick="showHeader()">Show Header</div>
             </div>
         </div>
+        
+        <h3 id="message">Thank you for using my page!</h3>
+            
     </div>
 </body>
 </html>

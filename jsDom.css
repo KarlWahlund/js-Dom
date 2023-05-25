@@ -6,7 +6,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     position: fixed;
-    top: 27.5vw;
+    top: 25vw;
 }
 
 #boxSubDiv{
@@ -33,7 +33,7 @@
 }
 
 #img{
-    width: 20vw;
+    width: 15vw;
     margin: 0.5vw;
 }
 
@@ -62,4 +62,12 @@ body{
 #itemHolder{
     display: flex;
     flex-direction: column;
+}
+
+#message{
+    display: none;
+    color: gold;
+    font-size: 1.4vw;
+    position: fixed;
+    top: 44.5vw;
 }
