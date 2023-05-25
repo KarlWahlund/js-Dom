@@ -6,7 +6,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     position: fixed;
-    top: 25vw;
+    top: 24vw;
 }
 
 #boxSubDiv{
@@ -69,5 +69,5 @@ body{
     color: gold;
     font-size: 1.4vw;
     position: fixed;
-    top: 44.5vw;
+    top: 43.5vw;
 }
